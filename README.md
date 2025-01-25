@@ -4,51 +4,44 @@ KeePassXC Cleanup is a tool designed to help you manage and clean up your KeePas
 
 ## Installation
 
-To install KeePassXC Cleanup, follow these steps:
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/keepassxc_cleanup.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd keepassxc_cleanup
-    ```
-3. Install the required dependencies:
-    ```bash
-    npm install
-    ```
+To install the required dependencies, run:
+```bash
+python install_requirements.py
+```
 
 ## Usage
 
-To use KeePassXC Cleanup, follow these steps:
+The script provides three main functionalities: listing duplicates, deduplication, and listing custom properties.
 
-1. Open your KeePassXC database.
-2. Run the cleanup script:
-    ```bash
-    npm run cleanup
-    ```
-3. Follow the on-screen instructions to clean up your database.
+### List Duplicates
 
-## Contributing
+To find and list duplicate entries in your KeePassXC database, run:
+```bash
+python main.py list_duplicates <path_to_database>
+```
 
-We welcome contributions to KeePassXC Cleanup! To contribute, follow these steps:
+### Deduplicate
 
-1. Fork the repository.
-2. Create a new branch:
-    ```bash
-    git checkout -b feature-branch
-    ```
-3. Make your changes and commit them:
-    ```bash
-    git commit -m "Description of your changes"
-    ```
-4. Push to the branch:
-    ```bash
-    git push origin feature-branch
-    ```
-5. Create a pull request.
+To remove duplicate entries after user selection, run:
+```bash
+python main.py dedup <path_to_database>
+```
 
-## License
+### List Custom Properties
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+To list custom properties of all entries in your KeePassXC database, run:
+```bash
+python main.py list_custom_properties <path_to_database>
+```
+
+## Example
+
+```bash
+python main.py list_duplicates mydatabase.kdbx
+python main.py dedup mydatabase.kdbx
+python main.py list_custom_properties mydatabase.kdbx
+```
+
+Replace `<path_to_database>` with the path to your KeePassXC database file.
+
+
